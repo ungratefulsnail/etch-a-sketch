@@ -4,13 +4,20 @@
     box-sizing: border-box;
 }
 
+.header {
+    font-family: cursive;
+}
+
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: 50px;
 }
 
+/* height and width set to 320px and combine with wrap forces the 20x20 divs to make the 16x16 grid */
 .container {
     display: flex;
     height: 320px;
@@ -19,8 +26,11 @@ body {
 }
 
 .div {
-    background-color: yellow;
     width: 20px;
     height: 20px;
     border: 1px solid grey;
+}
+
+.div:hover {
+    background-color: black;
 }
