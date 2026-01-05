@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    height: 320px;
+    width: 320px;
+    flex-wrap: wrap;
+}
+
+.div {
+    background-color: yellow;
+    width: 20px;
+    height: 20px;
+    border: 1px solid grey;
+}
