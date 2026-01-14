@@ -26,6 +26,30 @@ function createGrid(size) {
         square.style.height = squareSize + 'px';
     }
 
+    // Hover effect
+    square.addEventListener('mouseover', function() {
+        square.style.backgroundColor = 'black';
+    })
+
     // Adds the squares in the container
     container.appendChild(square);
 }
+
+createGrid(currentSize);
+
+
+// New grid button prompt for a new size
+newGridBtn.addEventListener('click', function() {
+    let newSize = prompt('How many squares per side for the new grid? (1-100)');
+
+    // Convert to number
+    newSize = parseInt(newSize);
+
+    // Protects from lower or higher number
+    if(newSize < 1 || newSize > 100) {
+        alert('Please enter a number between 1 and 100!');
+        return;
+    }
+    currentSize = newSize;
+    createGrid(newSize);
+})
