@@ -14,7 +14,7 @@ function createGrid(size) {
     container.innerHTML = '';
 
     // Calculate each square size
-    squareSize = CONTAINER_SIZE / size;
+    let squareSize = CONTAINER_SIZE / size;
 
     // Create the total square numbers (size * size)
     for (let i = 0; i < size * size; i++) {
@@ -24,15 +24,17 @@ function createGrid(size) {
         // Set the size in pixels
         square.style.width = squareSize + 'px';
         square.style.height = squareSize + 'px';
+
+        // Hover effect
+        square.addEventListener('mouseover', function() {
+        // Random color
+        const randomColor = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+        square.style.backgroundColor = randomColor;
+        });
+
+        // Adds the squares in the container
+        container.appendChild(square);
     }
-
-    // Hover effect
-    square.addEventListener('mouseover', function() {
-        square.style.backgroundColor = 'black';
-    })
-
-    // Adds the squares in the container
-    container.appendChild(square);
 }
 
 createGrid(currentSize);
